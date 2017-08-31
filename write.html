@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>write</title>
+    <style>
+        @keyframes blink {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        -webkit- @keyframes blink {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        .write {
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 400px;
+            font-size: 95px;
+        }
+
+        .write::after {
+            content: "";
+            background-color: #00030d;
+            width: 6px;
+            height: 95px;
+            vertical-align: -10px;
+            margin-left: 5px;
+            display: inline-block;
+            animation: blink .4s infinite alternate;
+            -webkit-animation: blink .4s infinite alternate;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="write"></div>
+
+    <script>
+        let write = document.querySelector(".write"),
+            str = "Hello",
+            timer = null;
+
+        let log = console.log.bind(console)
+
+        function typing() {
+            let wstr = [],
+                i = -1;
+
+            timer = setInterval(function() {
+                i = i + 1
+                wstr.push(str[i])
+                write.innerText = wstr.join("")
+
+                if (i > str.length - 1) {
+                    clearInterval(timer)
+                    deleting()
+                }
+            }, 500)
+        }
+
+        function deleting() {
+            let wstr = str.split(""),
+                j = wstr.length;
+
+            timer = setInterval(function() {
+                j = j - 1
+                wstr = wstr.slice(0, j)
+                write.innerText = wstr.join("")
+
+                if (j <= 0) {
+                    clearInterval(timer)
+                    typing()
+                }
+            }, 500)
+        }
+
+        typing()
+    </script>
+</body>
+
+</html>
