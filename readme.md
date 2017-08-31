@@ -1,7 +1,8 @@
-> power by kawhi&&Esen with 3 hours
+> power by **kawhi**&&Esen with 3 hours
 
 
 ## typing.js
+
 
 Demo:[https://daoyi7.github.io/auto-input/](https://daoyi7.github.io/auto-input/)
 
