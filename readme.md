@@ -3,7 +3,7 @@
 
 ## typing.js
 
-Demo:[https://daoyi7.github.io/typing.js/index.html](https://daoyi7.github.io/typing.js/index.html)
+Demo:[https://daoyi7.github.io/auto-input/](https://daoyi7.github.io/auto-input/)
 
 Automatic input and Automatic delete
 
